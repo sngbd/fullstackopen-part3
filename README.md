@@ -1,1 +1,1 @@
-[My phonebook API](https://fso-phonebook-12.herokuapp.com/api/persons)
+[My phonebook app](https://fso-phonebook-12.herokuapp.com)
