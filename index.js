@@ -46,7 +46,7 @@ app.get('/info', (request, response) => {
   })
 })
 
-app.delete('/api/persons/:id', (request, response) => {
+app.delete('/api/persons/:id', (request, response, next) => {
   Person.findByIdAndDelete(request.params.id).then(person => {
     if (person) {
       response.status(204).end()
@@ -55,7 +55,7 @@ app.delete('/api/persons/:id', (request, response) => {
       response.status(404).end()
     }
   })
-  .catch(error => console.log(error))
+  .catch(error => next(error))
 })
 
 app.post('/api/persons', (request, response) => {
@@ -97,5 +97,4 @@ const errorHandler = (error, request, response, next) => {
   next(error)
 }
 
-// this has to be the last loaded middleware.
 app.use(errorHandler)
