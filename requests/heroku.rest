@@ -1,0 +1,9 @@
+GET https://fso-phonebook-12.herokuapp.com/api/persons
+###
+POST https://fso-phonebook-12.herokuapp.com/api/persons
+Content-Type: application/json
+
+{
+    "name": "TESTING",
+    "number": "12-34567890"
+}
