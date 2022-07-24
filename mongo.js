@@ -25,8 +25,8 @@ const Person = mongoose.model('Person', personSchema)
 
 mongoose
   .connect(url)
-  .then((result) => {
-    if (length == 5) {
+  .then(() => {
+    if (length === 5) {
       const person = new Person({
         name: name,
         number: number
@@ -35,7 +35,7 @@ mongoose
     }
 
     Person.find({}).then(result => {
-      console.log('phonebook:') 
+      console.log('phonebook:')
       result.forEach(person => {
         console.log(`${person.name} ${person.number}`)
       })
@@ -43,7 +43,7 @@ mongoose
     })
   })
   .then(() => {
-    if (length == 5) {
+    if (length === 5) {
       console.log(`added ${name} number ${number} to phonebook`)
       return mongoose.connection.close()
     }
